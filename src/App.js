@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,16 +12,32 @@ function App() {
       </header>
       <main>
         <section>
-          <h2>About This Page</h2>
-          <p>This is a simple web page created using React. It demonstrates the basic structure of a React component.</p>
+          <h2>Enter Your Information</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+          </form>
         </section>
         <section>
-          <h2>Features</h2>
-          <ul>
-            <li>Easy to understand</li>
-            <li>Quick to set up</li>
-            <li>Scalable for larger projects</li>
-          </ul>
+          <h2>Your Information</h2>
+          <p><strong>Name:</strong> {name}</p>
+          <p><strong>Email:</strong> {email}</p>
         </section>
       </main>
       <footer>
