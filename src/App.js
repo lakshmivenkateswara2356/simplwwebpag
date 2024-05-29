@@ -43,7 +43,7 @@ function App() {
         <h1 className="text-2xl font-bold">Welcome to My Simple Web Page</h1>
       </header>
       <main className="flex flex-col items-center mt-8 w-full">
-        <section className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+        <section className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
           <h2 className="text-xl font-semibold mb-4">Enter Your Information</h2>
           <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -58,7 +58,7 @@ function App() {
                     setErrors(prev => ({ ...prev, name: '' }));
                   }
                 }}
-                className={`mt-1 p-2 border rounded-md w-full ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                className={`mt-1 p-2 border rounded-md w-full transition duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
               />
               {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
             </div>
@@ -74,21 +74,21 @@ function App() {
                     setErrors(prev => ({ ...prev, email: '' }));
                   }
                 }}
-                className={`mt-1 p-2 border rounded-md w-full ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                className={`mt-1 p-2 border rounded-md w-full transition duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-600 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </div>
-            <button type="submit" className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-300">
+            <button type="submit" className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-500 ease-in-out transform hover:-translate-y-1">
               Submit
             </button>
           </form>
           {submitted && (
-            <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+            <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md transition duration-500 ease-in-out transform">
               <p>Thank you, {name}! Your information has been submitted successfully.</p>
             </div>
           )}
         </section>
-        <section className="bg-white p-6 rounded-lg shadow-lg mt-6 w-full max-w-md">
+        <section className="bg-white p-6 rounded-lg shadow-lg mt-6 w-full max-w-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl">
           <h2 className="text-xl font-semibold mb-4">Your Information</h2>
           <p><strong>Name:</strong> {name}</p>
           <p><strong>Email:</strong> {email}</p>
